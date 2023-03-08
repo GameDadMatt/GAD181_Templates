@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SceneSwapperExample.unity
+    path: Assets/Scenes/MasterScene.unity
     guid: 6ae5471e9bf0a0b4d928b043afa8479b
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UIScene.unity
     guid: 9388852473607e04bbd9f2027acf6396
+  - enabled: 1
+    path: Assets/Scenes/ExampleScene.unity
+    guid: 215a2380403c20a4eb050fdbe3863497
   m_configObjects: {}

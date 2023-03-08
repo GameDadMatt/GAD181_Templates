@@ -33,7 +33,7 @@ public class SceneSwapper : MonoBehaviour
     private Queue sceneQueue = new Queue();
     private bool loadingScenes = false;
     private AsyncOperation currentOperation;
-    private string currentScene;
+    public string CurrentScene { get; private set; }
 
     private void OnEnable()
     {
@@ -67,15 +67,15 @@ public class SceneSwapper : MonoBehaviour
     /// Load a given scene from a string
     /// </summary>
     /// <param name="id"></param>
-    public void LoadScene(string sceneToLoad)
+    public void LoadUnloadScene(string sceneToLoad)
     {
         //Check if there is a game scene already loaded based on the current scene and unload it if there is
         //However, do not do this if the act to load and the loaded act are one and the same!
         
         //If this is a new game scene, unload the existing game scene first
-        if (ActiveScenes.Contains(currentScene) && sceneToLoad != currentScene)
+        if (ActiveScenes.Contains(CurrentScene) && sceneToLoad != CurrentScene)
         {
-            sceneQueue.Enqueue(new SceneLoadWrapper(currentScene, OperationType.unload));
+            sceneQueue.Enqueue(new SceneLoadWrapper(CurrentScene, OperationType.unload));
         }
 
         //Check if the desired scene is loaded, and load it if it is not loaded yet
@@ -85,7 +85,7 @@ public class SceneSwapper : MonoBehaviour
         }
 
         //Set the loaded scene
-        currentScene = sceneToLoad;
+        CurrentScene = sceneToLoad;
 
         StartLoadQueue();
     }
@@ -103,7 +103,7 @@ public class SceneSwapper : MonoBehaviour
             string sceneToLoad = gameScenes[positionInList];
 
             //Since the other LoadScene function does everything we need from this point, it causes less errors just to use it again
-            LoadScene(sceneToLoad);
+            LoadUnloadScene(sceneToLoad);
         }
         else
         {

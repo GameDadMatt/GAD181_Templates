@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 366486378}
   - component: {fileID: 366486379}
+  - component: {fileID: 366486381}
+  - component: {fileID: 366486380}
   - component: {fileID: 366486377}
   m_Layer: 0
   m_Name: GameManager
@@ -157,6 +159,7 @@ MonoBehaviour:
   - UIScene
   gameScenes:
   - GameScene
+  - ExampleScene
 --- !u!4 &366486378
 Transform:
   m_ObjectHideFlags: 0
@@ -182,6 +185,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7554aa33881db1147bd4dcce518877c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &366486380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366486376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45ec854c5df75244b89e7c699550f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &366486381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366486376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640bcc8180322d04788a6b7d57e1dca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1036471003
