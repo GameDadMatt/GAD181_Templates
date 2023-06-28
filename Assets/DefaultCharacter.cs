@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class DefaultCharacter : MonoBehaviour
 {
     public float lifetime = 1f;
     public float moveSpeed = 1f;

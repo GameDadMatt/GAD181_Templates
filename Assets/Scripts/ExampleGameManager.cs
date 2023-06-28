@@ -11,7 +11,8 @@ public class ExampleGameManager : MonoBehaviour
     {
         //Tell SceneSwapper to load the starting UI
         SceneSwapper.instance.LoadStartingUI();
-        RandomSelectScene();
+        //RandomSelectScene();
+        SelectScene("Microgame1");
     }
 
     public void RandomSelectScene()
@@ -20,6 +21,11 @@ public class ExampleGameManager : MonoBehaviour
 
         //Also tell SceneSwapper to load the game scene at position 0
         SceneSwapper.instance.LoadScene(random);
+    }
+
+    public void SelectScene(string sceneName)
+    {
+        SceneSwapper.instance.LoadUnloadScene(sceneName);
     }
 
     public void Update()
