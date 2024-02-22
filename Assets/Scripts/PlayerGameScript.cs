@@ -3,43 +3,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Example.Player
+public class PlayerGameScript : MonoBehaviour
 {
-    public class PlayerGameScript : MonoBehaviour
+    public void Start()
     {
-        public void Start()
-        {
-            InputManager.instance.OnJump += Jump;
-            InputManager.instance.OnRight += MoveRight;
-            InputManager.instance.OnLeft += MoveLeft;
-            InputManager.instance.OnDown += MoveDown;
-            InputManager.instance.OnUp += MoveUp;
-            EventManager.instance.UpdateUI("9/10HP");
-        }
+        InputManager.instance.OnJump += Jump;
+        InputManager.instance.OnRight += MoveRight;
+        InputManager.instance.OnLeft += MoveLeft;
+        InputManager.instance.OnDown += MoveDown;
+        InputManager.instance.OnUp += MoveUp;
+        InputManager.instance.OnFire += Fire;
+        EventManager.instance.UpdateUI("9/10HP");
+    }
 
-        protected virtual void Jump()
-        {
-            Debug.Log("Jump!");
-        }
+    //Jump is Space
+    protected virtual void Jump()
+    {
+        Debug.Log("Jump!");
+    }
 
-        protected virtual void MoveRight()
-        {
-            Debug.Log("Move Right!");
-        }
+    //Move right is the D key
+    protected virtual void MoveRight()
+    {
+        Debug.Log("Move Right!");
+    }
 
-        protected virtual void MoveLeft()
-        {
-            Debug.Log("Move Left!");
-        }
+    //Move left is the A key
+    protected virtual void MoveLeft()
+    {
+        Debug.Log("Move Left!");
+    }
 
-        protected virtual void MoveUp()
-        {
-            Debug.Log("Move Up!");
-        }
+    //Move up is the W key
+    protected virtual void MoveUp()
+    {
+        Debug.Log("Move Up!");
+    }
 
-        protected virtual void MoveDown()
-        {
-            Debug.Log("Move Down!");
-        }
+    //Move down is the S key
+    protected virtual void MoveDown()
+    {
+        Debug.Log("Move Down!");
+    }
+
+    //Fire is left mouse 
+    protected virtual void Fire()
+    {
+        Debug.Log("Fire!");
+        //Here is where we should invoke the event to destroy an enemy
     }
 }
